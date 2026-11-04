@@ -9,7 +9,7 @@ from werkzeug.security import check_password_hash
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY") or secrets.token_hex(32)
-DB_PATH = os.environ.get("LIKES_DB_PATH", "daily_likes.sqlite3")
+DB_PATH = os.environ.get("LIKES_DB_PATH", "/tmp/daily_likes.sqlite3")
 
 
 def db():
