@@ -2,15 +2,27 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py",
-      "use": "@vercel/python"
+      "src": "index.html",
+      "use": "@vercel/static"
     },
     {
-      "src": "wsgi.py",
+      "src": "app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
+    {
+      "src": "/health",
+      "dest": "app.py"
+    },
+    {
+      "src": "/v3/generate",
+      "dest": "app.py"
+    },
+    {
+      "src": "/",
+      "dest": "index.html"
+    },
     {
       "src": "/(.*)",
       "dest": "app.py"
