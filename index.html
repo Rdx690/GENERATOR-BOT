@@ -1,75 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b14"><title>GENERATOR BOT — Secure Access</title>
-  <style>
-    :root{color-scheme:dark;--bg:#080b14;--line:#263650;--muted:#91a0b8;--text:#edf3ff;--cyan:#65e6ff;--violet:#9d8cff;--green:#54e6a5;--red:#ff7185}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#172747 0,transparent 38%),radial-gradient(ellipse at 90% 15%,#241b49 0,transparent 34%),var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
-    .wrap{width:min(1080px,calc(100% - 32px));margin:auto;padding:38px 0 28px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:13px}.logo{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07101b;font-weight:900;font-size:20px}.brand h1{font-size:17px;letter-spacing:.13em;margin:0}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}.tag{border:1px solid var(--line);border-radius:99px;padding:8px 12px;color:#b7c5dc;font-size:11px;letter-spacing:.1em}
-    .gate{width:min(430px,100%);margin:8vh auto 0;padding:30px;border:1px solid #293750;border-radius:23px;background:linear-gradient(145deg,#14243aee,#101522);box-shadow:0 25px 80px #0006}.lock{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:#65e6ff18;color:var(--cyan);font-size:24px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.2em;font-weight:800;margin-top:20px}.gate h2{font-size:29px;margin:9px 0}.muted{color:var(--muted);font-size:13px;line-height:1.65}.field{display:flex;gap:9px;margin-top:20px}.field input{min-width:0;flex:1;background:#080f1b;border:1px solid #293750;border-radius:11px;padding:14px;color:var(--text);outline:none}.field input:focus{border-color:var(--cyan)}button{border:0;border-radius:11px;padding:13px 17px;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07101b;font-weight:850;cursor:pointer}.error{min-height:20px;color:var(--red);font-size:12px;margin-top:12px}.security-note{border-top:1px solid var(--line);padding-top:15px;margin-top:18px;color:#8392aa;font-size:11px;line-height:1.6}
-    #dashboard{display:none}.hero{padding:32px;border:1px solid #293750;border-radius:24px;background:linear-gradient(125deg,#14243aee,#15172bee);box-shadow:0 25px 80px #0005}.hero h2{font-size:clamp(29px,5vw,44px);margin:12px 0}.hero p{color:#adbbd0;max-width:650px;line-height:1.7;margin:0}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:18px}.card{background:#0e1624ef;border:1px solid var(--line);border-radius:19px;padding:22px}.card h3{font-size:14px;margin:0 0 16px}.status{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-size:13px}.dot{width:9px;height:9px;border-radius:50%;background:#718096}.dot.ok{background:var(--green)}.dot.bad{background:var(--red)}.details{margin-top:14px;padding:13px;border-radius:12px;background:#080f1b;color:#a9bad2;font:12px/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;min-height:45px}.endpoint{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #1d2a3e}.endpoint:last-of-type{border:0}.method{font:800 10px ui-monospace,monospace;color:var(--green);background:#54e6a514;padding:5px 7px;border-radius:6px}.endpoint code{font-size:12px}.endpoint small{margin-left:auto;color:var(--muted);font-size:11px}.note{margin-top:14px;border:1px solid #3a3040;background:#171421;border-radius:13px;padding:14px;color:#b9afc7;font-size:12px;line-height:1.6}.footer{text-align:center;color:#65748c;font-size:11px;margin-top:28px}.footer a{color:var(--cyan);text-decoration:none}.logout{background:transparent;border:1px solid var(--line);color:#c5d2e5;padding:9px 12px}
-    @media(max-width:720px){.wrap{padding-top:24px}.tag{font-size:9px}.gate{margin-top:5vh;padding:24px}.field{flex-direction:column}.grid{grid-template-columns:1fr}.endpoint small{display:none}.hero{padding:24px}}
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b14">
+<title>GENERATOR BOT — Account Studio</title>
+<style>
+:root{color-scheme:dark;--bg:#080b14;--panel:#111b2b;--line:#293a54;--muted:#91a2bb;--text:#edf4ff;--cyan:#65e6ff;--violet:#9d8cff;--green:#54e6a5;--red:#ff7185}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#172747 0,transparent 38%),radial-gradient(ellipse at 90% 15%,#241b49 0,transparent 34%),var(--bg);font-family:Inter,system-ui,sans-serif;color:var(--text)}
+.wrap{width:min(1080px,calc(100% - 30px));margin:auto;padding:28px 0}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07101b;font-weight:950;font-size:21px}.brand h1{font-size:16px;letter-spacing:.12em;margin:0}.brand p{font-size:11px;color:var(--muted);margin:4px 0}.tag{border:1px solid var(--line);border-radius:99px;padding:8px 11px;font-size:10px;color:#c3d2e8;letter-spacing:.1em}
+.gate{width:min(430px,100%);margin:9vh auto;padding:28px;border:1px solid var(--line);border-radius:22px;background:#111b2bee}.gate h2{margin:12px 0 6px}.muted{color:var(--muted);font-size:13px;line-height:1.6}.field{display:flex;gap:10px;margin-top:15px}input,select{width:100%;min-width:0;background:#091321;border:1px solid var(--line);border-radius:11px;padding:13px;color:var(--text);outline:none}input:focus,select:focus{border-color:var(--cyan)}button{border:0;border-radius:11px;padding:13px 17px;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07101b;font-weight:850;cursor:pointer}button:disabled{opacity:.55;cursor:wait}.error{color:var(--red);font-size:12px;min-height:18px;margin-top:9px}
+#dashboard{display:none}.hero,.card{border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#14243aee,#101725ee);padding:23px}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--cyan);font-weight:850}.hero h2{font-size:clamp(27px,5vw,40px);margin:10px 0}.hero p{color:#aebdd2;font-size:13px;line-height:1.65;margin:0}.grid{display:grid;grid-template-columns:1fr .85fr;gap:17px;margin-top:17px}.card h3{font-size:13px;letter-spacing:.08em;margin:0 0 17px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.control label{display:block;font-size:11px;color:var(--muted);margin:0 0 7px}.wide{grid-column:1/-1}.generate{width:100%;margin-top:17px}.hint{font-size:11px;color:var(--muted);line-height:1.6;margin:12px 0 0}.results{display:grid;gap:12px}.empty{padding:24px 12px;text-align:center;border:1px dashed #34445e;border-radius:13px;color:var(--muted);font-size:12px}.account{background:#091321;border:1px solid #2b405e;border-radius:14px;padding:15px}.account-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.account-head strong{font-size:13px}.pill{font-size:9px;color:var(--green);border:1px solid #54e6a555;border-radius:99px;padding:5px 8px}.data{display:grid;grid-template-columns:1fr 1fr;gap:10px}.datum small{display:block;color:var(--muted);font-size:10px;margin-bottom:4px}.datum b{font-size:12px;overflow-wrap:anywhere}.copy{background:#1b2a40;color:#d8e7ff;padding:7px 10px;font-size:10px;margin-top:12px}.notice{border:1px solid #66552d;background:#211c12;color:#e6d5a9;border-radius:12px;padding:12px;font-size:11px;line-height:1.6;margin-top:15px}.status{font-size:11px;color:var(--muted);margin-top:12px}.logout{background:transparent;border:1px solid var(--line);color:#c5d2e5;padding:8px 11px}.footer{text-align:center;color:#718098;font-size:10px;margin:25px 0 5px}.footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr 1fr}.wrap{padding-top:19px}.hero,.card{padding:18px}.tag{font-size:9px}}@media(max-width:420px){.formgrid,.data{grid-template-columns:1fr}.wide{grid-column:auto}.field{flex-direction:column}}
+</style>
 </head>
-<body>
-  <main class="wrap">
-    <header class="top"><div class="brand"><div class="logo">G</div><div><h1>GENERATOR BOT</h1><p>API STATUS &amp; DOCUMENTATION</p></div></div><span class="tag">ACCESS CONTROL</span></header>
-    <section id="gate" class="gate">
-      <div class="lock">⌑</div><div class="eyebrow">RESTRICTED AREA</div><h2>Access key required</h2>
-      <p class="muted">Enter your access key to open the API status dashboard.</p>
-      <form id="accessForm"><div class="field"><input id="accessKey" type="password" placeholder="Enter access key" autocomplete="off" required><button type="submit">UNLOCK</button></div></form>
-      <div id="accessError" class="error" role="alert"></div>
-      <div class="security-note">This is a front-end demonstration gate. The key is included in the page source and does not secure the backend API. Do not use it to protect private data or production endpoints.</div>
-    </section>
-    <section id="dashboard">
-      <div class="hero"><div class="eyebrow">DEVELOPER CONSOLE</div><h2>API status dashboard</h2><p>Check whether your deployed Flask API is responding and view its documented routes.</p></div>
-      <section class="grid">
-        <div class="card"><h3>CONNECTION STATUS</h3><form id="healthForm"><div class="field"><input id="baseUrl" type="url" placeholder="https://your-api-domain.vercel.app" required><button type="submit">CHECK API</button></div></form><div class="status"><span id="dot" class="dot"></span><span id="statusText">Waiting for API URL</span></div><div id="details" class="details">Health response will appear here.</div></div>
-        <div class="card"><h3>AVAILABLE ROUTES</h3><div class="endpoint"><span class="method">GET</span><code>/</code><small>API info</small></div><div class="endpoint"><span class="method">GET</span><code>/health</code><small>Health check</small></div><div class="endpoint"><span class="method">GET</span><code>/v3/generate</code><small>Backend route</small></div><div class="note">This dashboard only checks API health and documents routes; it does not run bulk account-generation requests.</div></div>
-      </section>
-      <footer class="footer">© <span id="year"></span> GENERATOR BOT · <a href="https://github.com/Rdx690/GENERATOR-BOT" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a> · <button class="logout" id="logoutBtn" type="button">LOCK DASHBOARD</button></footer>
-    </section>
-  </main>
-  <script>
-    // Demo-only gate: a key placed in client-side JavaScript is visible to anyone inspecting this file.
-    const ACCESS_KEY = 'SOURAJITVFXBOT';
-    const $ = id => document.getElementById(id);
-    $('year').textContent = new Date().getFullYear();
-    $('accessForm').addEventListener('submit', event => {
-      event.preventDefault();
-      const entered = $('accessKey').value.trim();
-      if (entered === ACCESS_KEY) {
-        $('gate').style.display = 'none'; $('dashboard').style.display = 'block'; $('accessError').textContent = '';
-        $('baseUrl').value = location.origin;
-      } else {
-        $('accessError').textContent = 'Invalid access key. Please try again.';
-        $('accessKey').value = ''; $('accessKey').focus();
-      }
-    });
-    $('logoutBtn').addEventListener('click', () => {
-      $('dashboard').style.display = 'none'; $('gate').style.display = 'block'; $('accessKey').value = '';
-    });
-    $('healthForm').addEventListener('submit', async event => {
-      event.preventDefault();
-      const raw = $('baseUrl').value.trim().replace(/\/$/, '');
-      let url;
-      try { url = new URL(raw); if (!['http:', 'https:'].includes(url.protocol)) throw new Error(); }
-      catch { $('statusText').textContent = 'Enter a valid http(s) URL'; $('dot').className = 'dot bad'; return; }
-      const button = $('healthForm').querySelector('button'); button.disabled = true; button.textContent = 'CHECKING…';
-      $('dot').className = 'dot'; $('statusText').textContent = 'Connecting…'; $('details').textContent = 'Requesting /health';
-      try {
-        const response = await fetch(url.origin + '/health', {headers:{Accept:'application/json'}});
-        const body = await response.text(); let parsed;
-        try { parsed = JSON.parse(body); } catch { parsed = {response:body.slice(0,1000)}; }
-        if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + JSON.stringify(parsed));
-        $('dot').className = 'dot ok'; $('statusText').textContent = 'API is responding · HTTP ' + response.status;
-        $('details').textContent = JSON.stringify(parsed, null, 2);
-      } catch (error) {
-        $('dot').className = 'dot bad'; $('statusText').textContent = 'Could not verify API health';
-        $('details').textContent = String(error.message || error) + '\nIf this is a separate domain, configure CORS on the API.';
-      } finally { button.disabled = false; button.textContent = 'CHECK API'; }
-    });
-  </script>
-</body>
-</html>
+<body><main class="wrap">
+<header class="top"><div class="brand"><div class="logo">G</div><div><h1>GENERATOR BOT</h1><p>ACCOUNT STUDIO · DEMO MODE</p></div></div><span class="tag">ACCESS CONTROL</span></header>
+<section id="gate" class="gate"><div class="eyebrow">RESTRICTED AREA</div><h2>Access key required</h2><p class="muted">Enter your access key to open Account Studio.</p><form id="accessForm"><div class="field"><input id="accessKey" type="password" placeholder="Enter access key" autocomplete="off" required><button>UNLOCK</button></div></form><div id="accessError" class="error" role="alert"></div><p class="hint">Demo gate only: the key is visible in page source and is not production security.</p></section>
+<section id="dashboard">
+<div class="hero"><div class="eyebrow">CUSTOM ACCOUNT BUILDER</div><h2>Generate account preview</h2><p>Choose one or two demo profiles, set a username prefix and region, then view the generated credentials and profile details.</p></div>
+<div class="grid">
+<section class="card"><h3>GENERATION SETTINGS</h3>
+<form id="generatorForm"><div class="formgrid">
+<div class="control"><label for="count">ACCOUNT COUNT</label><select id="count"><option value="1">1 Account</option><option value="2">2 Accounts</option></select></div>
+<div class="control"><label for="prefix">CUSTOM USERNAME</label><input id="prefix" maxlength="16" value="Sourajit" placeholder="Username prefix" required></div>
+<div class="control"><label for="country">COUNTRY</label><select id="country"><option value="India" data-region="IND">🇮🇳 India</option><option value="Indonesia" data-region="ID">🇮🇩 Indonesia</option><option value="Vietnam" data-region="VN">🇻🇳 Vietnam</option><option value="Thailand" data-region="TH">🇹🇭 Thailand</option><option value="Bangladesh" data-region="BD">🇧🇩 Bangladesh</option><option value="Pakistan" data-region="PK">🇵🇰 Pakistan</option><option value="Taiwan" data-region="TW">🇹🇼 Taiwan</option><option value="Brazil" data-region="BR">🇧🇷 Brazil</option><option value="United Arab Emirates" data-region="ME">🇦🇪 UAE / Middle East</option><option value="CIS" data-region="CIS">🌍 CIS</option><option value="South Asia" data-region="SAC">🌏 South Asia</option></select></div>
+<div class="control"><label for="level">LEVEL DISPLAY</label><select id="level"><option value="random">Random demo level</option><option value="1">Level 1</option><option value="10">Level 10</option><option value="25">Level 25</option><option value="50">Level 50</option><option value="75">Level 75</option></select></div>
+</div><button class="generate" id="generateBtn" type="submit">⚡ GENERATE ACCOUNT</button></form>
+<p class="hint">Each click creates local sample data in this browser. No external account is registered and no real password is issued.</p>
+<div class="notice"><b>DEMO MODE:</b> This page is a UI preview only. It does not connect to the backend account-creation route or create third-party accounts.</div>
+</section>
+<section class="card"><h3>GENERATED ACCOUNT DETAILS</h3><div id="results" class="results"><div class="empty">No accounts generated yet.<br>Choose your settings and tap Generate.</div></div><div class="status" id="resultStatus">Ready · Maximum 2 demo accounts per generation</div></section>
+</div>
+<footer class="footer">© <span id="year"></span> GENERATOR BOT · <a href="https://github.com/Rdx690/GENERATOR-BOT" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a> · <button class="logout" id="logoutBtn" type="button">LOCK DASHBOARD</button></footer>
+</section></main>
+<script>
+const ACCESS_KEY='SOURAJITVFXBOT';const $=id=>document.getElementById(id);$('year').textContent=new Date().getFullYear();
+$('accessForm').addEventListener('submit',e=>{e.preventDefault();if($('accessKey').value.trim()===ACCESS_KEY){$('gate').style.display='none';$('dashboard').style.display='block';$('accessError').textContent='';}else{$('accessError').textContent='Invalid access key. Try again.';$('accessKey').value='';}});
+$('logoutBtn').addEventListener('click',()=>{$('dashboard').style.display='none';$('gate').style.display='block';$('accessKey').value='';});
+function randomString(n){const chars='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789';let s='';for(let i=0;i<n;i++)s+=chars[Math.floor(Math.random()*chars.length)];return s;}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+$('generatorForm').addEventListener('submit',e=>{e.preventDefault();const count=Number($('count').value),prefix=$('prefix').value.trim().replace(/[^a-zA-Z0-9_.]/g,'').slice(0,16)||'Player';const country=$('country').selectedOptions[0],countryName=country.value,region=country.dataset.region;const levelChoice=$('level').value;const now=new Date();const stamp=now.toLocaleString();const items=[];for(let i=0;i<count;i++){const username=prefix+(count===1?'':(i+1))+'_'+randomString(4);const password=randomString(12);const level=levelChoice==='random'?Math.floor(Math.random()*60)+1:Number(levelChoice);items.push({username,password,level,countryName,region,stamp});}
+$('results').innerHTML=items.map((a,i)=>'<article class="account"><div class="account-head"><strong>ACCOUNT '+(i+1)+'</strong><span class="pill">DEMO GENERATED</span></div><div class="data"><div class="datum"><small>USERNAME</small><b>'+escapeHTML(a.username)+'</b></div><div class="datum"><small>PASSWORD</small><b>'+escapeHTML(a.password)+'</b></div><div class="datum"><small>LEVEL</small><b>'+a.level+'</b></div><div class="datum"><small>REGION</small><b>'+escapeHTML(a.region)+'</b></div><div class="datum"><small>COUNTRY</small><b>'+escapeHTML(a.countryName)+'</b></div><div class="datum"><small>GENERATED TIME</small><b>'+escapeHTML(a.stamp)+'</b></div></div><button class="copy" type="button" data-copy="'+i+'">COPY USER &amp; PASSWORD</button></article>').join('');
+$('resultStatus').textContent=count+' demo account preview'+(count>1?'s':'')+' generated · '+stamp;
+$('results').querySelectorAll('[data-copy]').forEach((btn,index)=>btn.addEventListener('click',async()=>{const a=items[index],txt='Username: '+a.username+'\nPassword: '+a.password+'\nLevel: '+a.level+'\nRegion: '+a.region+'\nCountry: '+a.countryName+'\nGenerated: '+a.stamp;try{await navigator.clipboard.writeText(txt);btn.textContent='COPIED ✓';}catch{btn.textContent='COPY NOT AVAILABLE';}}));
+});
+</script></body></html>
