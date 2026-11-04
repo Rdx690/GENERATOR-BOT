@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b14">
-  <title>GENERATOR BOT — API Dashboard</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14"><title>GENERATOR BOT — Secure Access</title>
   <style>
-    :root{color-scheme:dark;--bg:#080b14;--panel:#101726;--line:#202d42;--muted:#91a0b8;--text:#edf3ff;--cyan:#65e6ff;--violet:#9d8cff;--green:#54e6a5;--red:#ff7185}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#172747 0,transparent 38%),radial-gradient(ellipse at 90% 15%,#241b49 0,transparent 34%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
-    .wrap{width:min(1080px,calc(100% - 32px));margin:auto;padding:42px 0 28px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:34px}.brand{display:flex;align-items:center;gap:13px}.logo{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07101b;font-weight:900;font-size:20px;box-shadow:0 8px 30px #65e6ff30}.brand h1{font-size:17px;letter-spacing:.13em;margin:0}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}.tag{border:1px solid var(--line);border-radius:99px;padding:8px 12px;color:#b7c5dc;font-size:11px;letter-spacing:.1em}
-    .hero{padding:34px;border:1px solid #293750;border-radius:25px;background:linear-gradient(125deg,#14243aee,#15172bee);box-shadow:0 25px 80px #0005;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#65e6ff13;filter:blur(8px);right:-90px;top:-120px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.2em;font-weight:800}.hero h2{font-size:clamp(30px,5vw,48px);line-height:1.08;max-width:650px;margin:13px 0}.hero p{color:#adbbd0;max-width:620px;line-height:1.7;margin:0}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:18px}.card{background:#0e1624eF;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 14px 45px #0002}.card h3{font-size:14px;letter-spacing:.04em;margin:0 0 17px}.field{display:flex;gap:9px}.field input{min-width:0;flex:1;background:#080f1b;border:1px solid #293750;border-radius:11px;padding:13px;color:var(--text);outline:none}.field input:focus{border-color:var(--cyan)}button{border:0;border-radius:11px;padding:0 17px;background:linear-gradient(135deg,var(--cyan),#9d8cff);color:#07101b;font-weight:800;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.status{display:flex;align-items:center;gap:10px;margin-top:17px;color:var(--muted);font-size:13px}.dot{width:9px;height:9px;border-radius:50%;background:#718096}.dot.ok{background:var(--green);box-shadow:0 0 12px #54e6a5a0}.dot.bad{background:var(--red)}.details{margin-top:15px;padding:13px;border-radius:12px;background:#080f1b;color:#a9bad2;font:12px/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;min-height:48px}.endpoint{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #1d2a3e}.endpoint:last-child{border:0}.method{font:800 10px ui-monospace,monospace;color:var(--green);background:#54e6a514;padding:5px 7px;border-radius:6px}.endpoint code{font-size:12px;color:#dce8fa}.endpoint small{margin-left:auto;color:var(--muted);font-size:11px}.note{margin-top:18px;border:1px solid #3a3040;background:#171421;border-radius:15px;padding:16px;color:#b9afc7;font-size:12px;line-height:1.65}.note strong{color:#e4d6ff}.footer{text-align:center;color:#65748c;font-size:11px;margin-top:28px}.footer a{color:var(--cyan);text-decoration:none}
-    @media(max-width:720px){.wrap{padding-top:24px}.top{align-items:flex-start}.tag{font-size:9px}.hero{padding:25px}.grid{grid-template-columns:1fr}.field{flex-direction:column}.field button{padding:13px}.endpoint small{display:none}}
+    :root{color-scheme:dark;--bg:#080b14;--line:#263650;--muted:#91a0b8;--text:#edf3ff;--cyan:#65e6ff;--violet:#9d8cff;--green:#54e6a5;--red:#ff7185}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#172747 0,transparent 38%),radial-gradient(ellipse at 90% 15%,#241b49 0,transparent 34%),var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+    .wrap{width:min(1080px,calc(100% - 32px));margin:auto;padding:38px 0 28px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:13px}.logo{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07101b;font-weight:900;font-size:20px}.brand h1{font-size:17px;letter-spacing:.13em;margin:0}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}.tag{border:1px solid var(--line);border-radius:99px;padding:8px 12px;color:#b7c5dc;font-size:11px;letter-spacing:.1em}
+    .gate{width:min(430px,100%);margin:8vh auto 0;padding:30px;border:1px solid #293750;border-radius:23px;background:linear-gradient(145deg,#14243aee,#101522);box-shadow:0 25px 80px #0006}.lock{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:#65e6ff18;color:var(--cyan);font-size:24px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.2em;font-weight:800;margin-top:20px}.gate h2{font-size:29px;margin:9px 0}.muted{color:var(--muted);font-size:13px;line-height:1.65}.field{display:flex;gap:9px;margin-top:20px}.field input{min-width:0;flex:1;background:#080f1b;border:1px solid #293750;border-radius:11px;padding:14px;color:var(--text);outline:none}.field input:focus{border-color:var(--cyan)}button{border:0;border-radius:11px;padding:13px 17px;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07101b;font-weight:850;cursor:pointer}.error{min-height:20px;color:var(--red);font-size:12px;margin-top:12px}.security-note{border-top:1px solid var(--line);padding-top:15px;margin-top:18px;color:#8392aa;font-size:11px;line-height:1.6}
+    #dashboard{display:none}.hero{padding:32px;border:1px solid #293750;border-radius:24px;background:linear-gradient(125deg,#14243aee,#15172bee);box-shadow:0 25px 80px #0005}.hero h2{font-size:clamp(29px,5vw,44px);margin:12px 0}.hero p{color:#adbbd0;max-width:650px;line-height:1.7;margin:0}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:18px}.card{background:#0e1624ef;border:1px solid var(--line);border-radius:19px;padding:22px}.card h3{font-size:14px;margin:0 0 16px}.status{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-size:13px}.dot{width:9px;height:9px;border-radius:50%;background:#718096}.dot.ok{background:var(--green)}.dot.bad{background:var(--red)}.details{margin-top:14px;padding:13px;border-radius:12px;background:#080f1b;color:#a9bad2;font:12px/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;min-height:45px}.endpoint{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #1d2a3e}.endpoint:last-of-type{border:0}.method{font:800 10px ui-monospace,monospace;color:var(--green);background:#54e6a514;padding:5px 7px;border-radius:6px}.endpoint code{font-size:12px}.endpoint small{margin-left:auto;color:var(--muted);font-size:11px}.note{margin-top:14px;border:1px solid #3a3040;background:#171421;border-radius:13px;padding:14px;color:#b9afc7;font-size:12px;line-height:1.6}.footer{text-align:center;color:#65748c;font-size:11px;margin-top:28px}.footer a{color:var(--cyan);text-decoration:none}.logout{background:transparent;border:1px solid var(--line);color:#c5d2e5;padding:9px 12px}
+    @media(max-width:720px){.wrap{padding-top:24px}.tag{font-size:9px}.gate{margin-top:5vh;padding:24px}.field{flex-direction:column}.grid{grid-template-columns:1fr}.endpoint small{display:none}.hero{padding:24px}}
   </style>
 </head>
 <body>
   <main class="wrap">
-    <header class="top">
-      <div class="brand"><div class="logo">G</div><div><h1>GENERATOR BOT</h1><p>API STATUS &amp; DOCUMENTATION</p></div></div>
-      <span class="tag">V1 · DASHBOARD</span>
-    </header>
-    <section class="hero">
-      <div class="eyebrow">DEVELOPER CONSOLE</div>
-      <h2>API control, made simple.</h2>
-      <p>Check service availability and view the routes exposed by the Flask backend. Enter the deployed API base URL below to run a live health check.</p>
+    <header class="top"><div class="brand"><div class="logo">G</div><div><h1>GENERATOR BOT</h1><p>API STATUS &amp; DOCUMENTATION</p></div></div><span class="tag">ACCESS CONTROL</span></header>
+    <section id="gate" class="gate">
+      <div class="lock">⌑</div><div class="eyebrow">RESTRICTED AREA</div><h2>Access key required</h2>
+      <p class="muted">Enter your access key to open the API status dashboard.</p>
+      <form id="accessForm"><div class="field"><input id="accessKey" type="password" placeholder="Enter access key" autocomplete="off" required><button type="submit">UNLOCK</button></div></form>
+      <div id="accessError" class="error" role="alert"></div>
+      <div class="security-note">This is a front-end demonstration gate. The key is included in the page source and does not secure the backend API. Do not use it to protect private data or production endpoints.</div>
     </section>
-    <section class="grid">
-      <div class="card">
-        <h3>CONNECTION STATUS</h3>
-        <div class="field"><input id="baseUrl" type="url" placeholder="https://your-api-domain.vercel.app" autocomplete="url"><button id="checkBtn" type="button">CHECK API</button></div>
-        <div class="status"><span id="dot" class="dot"></span><span id="statusText">Waiting for API URL</span></div>
-        <div id="details" class="details">Health response will appear here.</div>
-      </div>
-      <div class="card">
-        <h3>AVAILABLE ROUTES</h3>
-        <div class="endpoint"><span class="method">GET</span><code>/</code><small>API info</small></div>
-        <div class="endpoint"><span class="method">GET</span><code>/health</code><small>Health check</small></div>
-        <div class="endpoint"><span class="method">GET</span><code>/v3/generate</code><small>Generator API</small></div>
-        <div class="note"><strong>Backend note</strong><br>The generation route can create accounts in bulk. Use only systems and services you are authorized to test, and follow the service provider's rules. This dashboard intentionally does not automate bulk account creation.</div>
-      </div>
+    <section id="dashboard">
+      <div class="hero"><div class="eyebrow">DEVELOPER CONSOLE</div><h2>API status dashboard</h2><p>Check whether your deployed Flask API is responding and view its documented routes.</p></div>
+      <section class="grid">
+        <div class="card"><h3>CONNECTION STATUS</h3><form id="healthForm"><div class="field"><input id="baseUrl" type="url" placeholder="https://your-api-domain.vercel.app" required><button type="submit">CHECK API</button></div></form><div class="status"><span id="dot" class="dot"></span><span id="statusText">Waiting for API URL</span></div><div id="details" class="details">Health response will appear here.</div></div>
+        <div class="card"><h3>AVAILABLE ROUTES</h3><div class="endpoint"><span class="method">GET</span><code>/</code><small>API info</small></div><div class="endpoint"><span class="method">GET</span><code>/health</code><small>Health check</small></div><div class="endpoint"><span class="method">GET</span><code>/v3/generate</code><small>Backend route</small></div><div class="note">This dashboard only checks API health and documents routes; it does not run bulk account-generation requests.</div></div>
+      </section>
+      <footer class="footer">© <span id="year"></span> GENERATOR BOT · <a href="https://github.com/Rdx690/GENERATOR-BOT" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a> · <button class="logout" id="logoutBtn" type="button">LOCK DASHBOARD</button></footer>
     </section>
-    <footer class="footer">© <span id="year"></span> GENERATOR BOT · Built for API monitoring · <a href="https://github.com/Rdx690/GENERATOR-BOT" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></footer>
   </main>
   <script>
-    const $ = (id) => document.getElementById(id);
+    // Demo-only gate: a key placed in client-side JavaScript is visible to anyone inspecting this file.
+    const ACCESS_KEY = 'SOURAJITVFXBOT';
+    const $ = id => document.getElementById(id);
     $('year').textContent = new Date().getFullYear();
-    $('baseUrl').value = location.protocol === 'http:' || location.protocol === 'https:' ? location.origin : '';
-    $('checkBtn').addEventListener('click', async () => {
+    $('accessForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const entered = $('accessKey').value.trim();
+      if (entered === ACCESS_KEY) {
+        $('gate').style.display = 'none'; $('dashboard').style.display = 'block'; $('accessError').textContent = '';
+        $('baseUrl').value = location.origin;
+      } else {
+        $('accessError').textContent = 'Invalid access key. Please try again.';
+        $('accessKey').value = ''; $('accessKey').focus();
+      }
+    });
+    $('logoutBtn').addEventListener('click', () => {
+      $('dashboard').style.display = 'none'; $('gate').style.display = 'block'; $('accessKey').value = '';
+    });
+    $('healthForm').addEventListener('submit', async event => {
+      event.preventDefault();
       const raw = $('baseUrl').value.trim().replace(/\/$/, '');
-      if (!raw) { $('statusText').textContent = 'Enter your deployed API URL first'; $('dot').className = 'dot bad'; return; }
       let url;
       try { url = new URL(raw); if (!['http:', 'https:'].includes(url.protocol)) throw new Error(); }
-      catch { $('statusText').textContent = 'Please enter a valid http(s) URL'; $('dot').className = 'dot bad'; return; }
-      $('checkBtn').disabled = true; $('checkBtn').textContent = 'CHECKING…';
-      $('dot').className = 'dot'; $('statusText').textContent = 'Connecting to API…'; $('details').textContent = 'Requesting /health';
+      catch { $('statusText').textContent = 'Enter a valid http(s) URL'; $('dot').className = 'dot bad'; return; }
+      const button = $('healthForm').querySelector('button'); button.disabled = true; button.textContent = 'CHECKING…';
+      $('dot').className = 'dot'; $('statusText').textContent = 'Connecting…'; $('details').textContent = 'Requesting /health';
       try {
-        const response = await fetch(url.origin + '/health', {method:'GET', headers:{Accept:'application/json'}});
-        const body = await response.text();
-        let parsed; try { parsed = JSON.parse(body); } catch { parsed = {response: body.slice(0, 1200)}; }
-        if (!response.ok) throw new Error('HTTP ' + response.status + '\n' + JSON.stringify(parsed, null, 2));
+        const response = await fetch(url.origin + '/health', {headers:{Accept:'application/json'}});
+        const body = await response.text(); let parsed;
+        try { parsed = JSON.parse(body); } catch { parsed = {response:body.slice(0,1000)}; }
+        if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + JSON.stringify(parsed));
         $('dot').className = 'dot ok'; $('statusText').textContent = 'API is responding · HTTP ' + response.status;
         $('details').textContent = JSON.stringify(parsed, null, 2);
       } catch (error) {
         $('dot').className = 'dot bad'; $('statusText').textContent = 'Could not verify API health';
-        $('details').textContent = String(error.message || error) + '\n\nIf this is a separate frontend domain, the API must allow cross-origin requests (CORS).';
-      } finally { $('checkBtn').disabled = false; $('checkBtn').textContent = 'CHECK API'; }
+        $('details').textContent = String(error.message || error) + '\nIf this is a separate domain, configure CORS on the API.';
+      } finally { button.disabled = false; button.textContent = 'CHECK API'; }
     });
   </script>
 </body>
