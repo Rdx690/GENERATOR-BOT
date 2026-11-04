@@ -21,7 +21,7 @@ table{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px}th,td{t
 {% if not logged_in %}
 <section class="panel login"><h2>Admin Login</h2><p class="hint">Sign in with the password configured on the server.</p>
 {% if error %}<p class="error">{{ error }}</p>{% endif %}
-<form method="post"><label>Admin password</label><input type="password" name="password" required autocomplete="current-password"><button type="submit">Secure Login</button></form></section>
+<form method="post" action="/admin"><label>Admin password</label><input type="password" name="password" required autocomplete="current-password"><button type="submit">Secure Login</button></form></section>
 {% else %}
 <div class="row"><h2>Dashboard</h2><form method="post" action="/logout"><button class="secondary" type="submit">Log out</button></form></div>
 <div class="grid"><div class="stat"><small>Likes today</small><div class="num" id="today">—</div></div><div class="stat"><small>Entries today</small><div class="num" id="entries">—</div></div><div class="stat"><small>All-time tracked likes</small><div class="num" id="total">—</div></div></div>
