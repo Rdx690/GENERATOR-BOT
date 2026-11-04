@@ -39,7 +39,7 @@ def admin_required(fn):
 
 @app.get("/")
 def home():
-    return redirect(url_for("admin_page"))
+    return render_template("index.html", logged_in=bool(session.get("admin")), csrf=session.get("csrf", ""), error="")
 
 
 @app.route("/admin", methods=["GET", "POST"])
